@@ -1,9 +1,0 @@
-E:\VS\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
-E:\VS\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe
-E:\VS\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
-E:\VS\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csprojResolveAssemblyReference.cache
-E:\VS\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
-E:\VS\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
-E:\VS\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
-E:\VS\ConsoleApp1\ConsoleApp1\obj\Debug\Interop.Shell32.dll
-E:\VS\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.ResolveComReference.cache
