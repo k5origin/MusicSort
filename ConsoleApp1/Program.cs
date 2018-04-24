@@ -16,7 +16,8 @@ namespace ConsoleApp1
             addFolders("d:\\", globalFolders); //This is the initial folder
             string destination = "d:\\sorted\\";  //Using a hardcoded destination folder for now, would have to check for a backslash at the end of the string too
             Console.WriteLine("Globals: ");
-            foreach (string folder in globalFolders) {
+            foreach (string folder in globalFolders)
+            {
                 Console.WriteLine(folder);
             }
             string[] fileEntries;
@@ -24,7 +25,8 @@ namespace ConsoleApp1
             Console.WriteLine("Begin");
             Console.WriteLine("\n");
             
-            foreach (string folder in globalFolders) {
+            foreach (string folder in globalFolders)
+            {
                 //Console.WriteLine(">> Folder: " + folder);
                 //Console.WriteLine("\n");
                 fileEntries = Directory.GetFiles(folder, "*.mp3");   //GetFiles(folder, "*.mp3");             
@@ -34,7 +36,7 @@ namespace ConsoleApp1
                     int lastslash = file.LastIndexOf("\\");
                     string foldername = file.Substring(0, lastslash + 1);
                     string filename = file.Substring(lastslash + 1);
-                    var fldr = shl.NameSpace(Path.GetDirectoryName(file)); //need to ignore recycle bin or this gets an exception
+                    var fldr = shl.NameSpace(Path.GetDirectoryName(file)); //need to ignore recycle bin or this gets an exception // Put some consistent names!
                     var itm = fldr.ParseName(Path.GetFileName(file));
                     var propValue = fldr.GetDetailsOf(itm, 27); //Gets the duration of any media
                     //Console.WriteLine("Folder: " + foldername);
@@ -48,7 +50,7 @@ namespace ConsoleApp1
                     {
                         File.Copy(file, destination + "\\" + filename); //This copies the file already in the destination folder after the operation... 
                     }
-                    catch (DirectoryNotFoundException e)
+                    catch (DirectoryNotFoundException e) // Programs shouldn't have to rely on exception handling
                     {
                         Console.WriteLine("Creating folder: " + destination);
                         System.IO.Directory.CreateDirectory(destination);
@@ -59,7 +61,9 @@ namespace ConsoleApp1
                         Console.WriteLine("File " + filename + " already exists."); //Find a way to exclude the destination
                     }
                     //Need to catch DirectoryNotFoundException and IOException
-
+                    // Instead try directoryinfo structure object - More efficient than strings, currently a resource hog
+                    // Or create directory if doesn't exist
+         
                 }
 
                 //Console.WriteLine("\n");
@@ -85,7 +89,8 @@ namespace ConsoleApp1
                     addFolders(folder, global);
                 }
             }
-            catch (UnauthorizedAccessException e){
+            catch (UnauthorizedAccessException e)
+            {
                 Console.WriteLine("Access denied: " + folderitem);
             }
  
